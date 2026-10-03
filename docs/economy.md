@@ -124,6 +124,7 @@ Un empleado distraído se queda así **hasta que el jugador lo despierta**.
 | Auto-compra de tokens | $30,000 (pago único) |
 | Bug en producción | Cada 60–120 s, ingreso de apps ×0.5 hasta aplastarlo |
 | Tap al avatar | Bono instantáneo = 1 segundo de sueldo |
+| Modo crunch | Velocidad de la PC ×3 (no afecta a empleados); sin sueldo ni tokens de regalo mientras dure |
 | Progreso offline | Ingreso de apps × 50%, tope 2 h |
 
 ## Fórmulas
@@ -131,7 +132,7 @@ Un empleado distraído se queda así **hasta que el jugador lo despierta**.
 ```
 ingreso_apps/s      = Σ ingreso(apps lanzadas) × (1 + 0.5 × racks) × (bug ? 0.5 : 1)
 ingreso_total/s     = ingreso_apps + (avatar_sentado ? sueldo : 0)
-velocidad_dev       = velocidad_pc + Σ velocidad(empleados trabajando)
+velocidad_dev       = velocidad_pc × (crunch ? 3 : 1) + Σ velocidad(empleados trabajando)
 tokens_app_actual   = tokens_base × multiplicador_ia
 ```
 

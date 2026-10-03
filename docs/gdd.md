@@ -1,6 +1,6 @@
 # Dev Master — Game Design Document
 
-> Estado: **borrador v0.1** · Última actualización: 2026-10-02
+> Estado: **borrador v0.2** · Última actualización: 2026-10-02
 > Este documento es la fuente de verdad del diseño. Si el código y el GDD no coinciden, se corrige uno de los dos a propósito, nunca por accidente.
 
 ## 1. Visión
@@ -57,13 +57,14 @@ Los tokens se cuentan en miles y millones (como los tokens reales de IA). Los n�
 
 ### 5.1 Empleo
 - El avatar del jugador trabaja **automáticamente** en su escritorio del empleo: teclea, le salen "+$30" y "+1K tokens" flotando.
-- **Solo cobra mientras está sentado.** Si se levanta (a despertar a alguien o a matar un bug), deja de ganar.
+- **Solo cobra mientras está sentado.** Si se levanta (a despertar a alguien, a matar un bug o a hacer crunch), deja de ganar.
 - **Ascensos:** Junior → Semi-Senior → Senior → Tech Lead → Staff → Principal → CTO. Cada uno cuesta dinero y sube el sueldo y los tokens de regalo.
 - **Tap al avatar:** da un pequeño bono instantáneo, con efecto visual y sonido.
 
 ### 5.2 Desarrollo de apps
 - Hay una sola app en desarrollo a la vez y se construyen **en orden**.
 - La **PC de la startup** consume tokens del inventario a cierta velocidad (tokens/s) y la app avanza. Su pantalla muestra código y una barra de progreso.
+- **Modo crunch:** si tocas la PC de la startup, el avatar camina hasta ella y se pone a programar. Mientras está ahí, la velocidad de la PC se **triplica**, pero **no cobra sueldo ni recibe tokens de regalo**. Para terminar el crunch, tocas el escritorio del empleo y el avatar regresa. Es opcional: sirve para acelerar el final de una app cuando ya tienes los tokens.
 - Si te quedas sin tokens, el desarrollo se pausa. Una alerta visual en la PC te avisa.
 - Al terminar: **lanzamiento** con confeti, notificación y el ingreso pasivo empieza.
 - Algunas apps necesitan estar en cierto mundo para empezar a desarrollarse.
@@ -122,14 +123,21 @@ Al mudarte conservas apps, empleados y mejoras. Solo cambia el escenario y se ab
 
 Detalle visual en [art-direction.md](art-direction.md).
 
-## 7. Decisiones abiertas
+## 7. Decisiones
+
+### Tomadas (2026-10-02)
+
+| # | Pregunta | Decisión |
+|---|---|---|
+| D1 | ¿Quién construye la app? | La PC sola, más el **modo crunch** opcional (ver 5.2). |
+| D2 | ¿Las apps se degradan con el tiempo? | No. Ingreso permanente. |
+| D3 | ¿Rebirth (vender la startup y reiniciar con bonus)? | Después de v1. En v1 el juego termina con la IPO. |
+| D4 | ¿Los empleados tienen sueldo? | No. Solo se paga al contratarlos. |
+
+### Abiertas
 
 | # | Pregunta | Propuesta actual |
 |---|---|---|
-| D1 | ¿Quién construye la app? | La PC sola. *Alternativa:* el avatar puede sentarse en la PC para hacer "crunch" (×3 de velocidad, pero sin sueldo). |
-| D2 | ¿Las apps se degradan con el tiempo? | No en v1. Ingreso permanente. |
-| D3 | ¿Rebirth (vender la startup y reiniciar con bonus)? | Fuera de v1. Se diseña después de validar el ciclo base. |
-| D4 | ¿Los empleados tienen sueldo? | No en v1. |
 | D5 | ¿Sonido y música? | Efectos simples en v1; música después. |
 
 ## 8. Fuera de alcance (v1)
